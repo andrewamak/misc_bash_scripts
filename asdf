@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#this is a bash script that will look at the all the files in my downloads folder
+# Defining the folder where the files to be sorted are located
+input_folder="/Users/andy/Downloads"
+
+# Loop through the files in the input folder
+for file in "$input_folder"/*; do
+    if [[ "$file" == *.png ]] | [[ "$file" == *.jpg ]]; then
+        mv "$file" /Users/andy/Pictures
+        echo "Picture Moved - $file"
+    elif [[ "$file" == *.mov ]] | [[ "$file" == *.mp4 ]]; then
+    else
+        echo "Not Moved - $file"
+  fi
+done
+
